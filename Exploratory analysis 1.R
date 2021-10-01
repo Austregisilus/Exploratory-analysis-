@@ -5,6 +5,7 @@ data <- read.table("household_power_consumption.txt", header = TRUE, sep = ";", 
 interested <- data[data$Date %in% c("1/2/2007","2/2/2007"),]
 
 #Variable for date and time combined
+library(lubridate)
 datetime <- strptime(paste(interested$Date, interested$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
 
 #Plot 1
